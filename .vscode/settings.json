@@ -1,0 +1,10 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "prof",
+      "database": "${workspaceFolder:proffy-aglz-remake}/server/src/database/database.sqlite"
+    }
+  ]
+}
