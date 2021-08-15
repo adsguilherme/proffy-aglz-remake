@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@bahmutov/cy-api": "^1.5.0",
     "@typescript-eslint/eslint-plugin": "^3.8.0",
     "@typescript-eslint/parser": "^3.8.0",
     "cypress": "^5.2.0",

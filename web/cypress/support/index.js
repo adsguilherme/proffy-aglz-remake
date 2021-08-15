@@ -20,3 +20,5 @@ import './commands'
 // require('./commands')
 
 require('cypress-react-unit-test/support')
+
+import '@bahmutov/cy-api/support'
