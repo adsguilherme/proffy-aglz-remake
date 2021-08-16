@@ -1,0 +1,34 @@
+name: Run tests
+
+on:
+  push:
+    branches: [main] # O job da pipeline irá executar apenas quando estiver na branch main
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-16.04 # Máquina que será executado o job
+    steps:
+      - name: Checkout # Checkout é o nome normalmente dado para a etapa de baixa o código do projeto
+        uses: actions/checkout@v1 # Identificar o reposítório e baixar o código desse repositório para a máquina Ubuntu-16.04
+      - name: Instalar as dependências do server
+        uses: bahmutov/npm-install@v1 # GitHub Action para instalar dependências npm com cache sem qualquer configuração
+        with:
+          working-directory: server
+      - name: Instalar as dependências do web
+        uses: bahmutov/npm-install@v1 # GitHub Action para instalar dependências npm com cache sem qualquer configuração
+        with:
+          working-directory: web
+      - name: Component & API & UI Tests # Será executado todos os testes na mesma tarefa
+        uses: cypress-io/github-action@v2 # Esse comando executa os testes
+        with:
+          working-directory: web
+          install: false
+          start: npn run start:ci
+          wait-on: 'http://localhost:3000' # Aguarde um certo tempo até que a aplicação reponda no seguinte endereço
+
+# Sequência de passos do nosso workflow:
+# Baixar o código
+# Intalar as dependências server e web
+# Subir as aplicações server e web
+# Executar os nossos testes
+# proffy-aglz
