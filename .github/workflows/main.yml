@@ -23,7 +23,7 @@ jobs:
         with:
           working-directory: web
           install: false
-          start: npn run start:ci
+          start: npm run start:ci
           wait-on: 'http://localhost:3000' # Aguarde um certo tempo até que a aplicação reponda no seguinte endereço
 
 # Sequência de passos do nosso workflow:
