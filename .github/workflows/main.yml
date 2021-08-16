@@ -11,7 +11,7 @@ jobs:
       - name: Checkout # Checkout é o nome normalmente dado para a etapa de baixa o código do projeto
         uses: actions/checkout@v1 # Identificar o reposítório e baixar o código desse repositório para a máquina Ubuntu-16.04
       - name: Instalar as dependências do server
-        uses: bahmutov/npm-install@v1 # GitHub Action para instalar dependências npm com cache sem qualquer configuração
+        uses: bahmutov/npm-install@v1.6.0 # GitHub Action para instalar dependências npm com cache sem qualquer configuração
         with:
           working-directory: server
       - name: Instalar as dependências do web
