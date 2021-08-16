@@ -6,7 +6,7 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-16.04 # Máquina que será executado o job
+    runs-on: ubuntu # Máquina que será executado o job
     steps:
       - name: Checkout # Checkout é o nome normalmente dado para a etapa de baixa o código do projeto
         uses: actions/checkout@v1 # Identificar o reposítório e baixar o código desse repositório para a máquina Ubuntu-16.04
