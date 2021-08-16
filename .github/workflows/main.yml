@@ -25,6 +25,20 @@ jobs:
           install: false
           start: npm run start:ci
           wait-on: 'http://localhost:3000' # Aguarde um certo tempo até que a aplicação reponda no seguinte endereço
+          
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v2.2.4
+        if: failure() # Essa condição irá subir screenshots apenas quando ocorrer falha nos testes executados pelo job
+        with:
+          name: screenshots
+          path: web/cypress/screenshots
+          
+      - name: Upload videos
+        uses: actions/upload-artifact@v2.2.4
+        if: always() # Essa condição irá subir sempre os videos do testes executados pelo job (passed or failed).
+        with:
+          name: videos
+          path: web/cypress/videos          
 
 # Sequência de passos do nosso workflow:
 # Baixar o código
