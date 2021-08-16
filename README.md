@@ -1,3 +1,5 @@
+[![Run tests](https://github.com/adsguilherme/proffy-aglz-remake/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/adsguilherme/proffy-aglz-remake/actions/workflows/main.yml)
+
 # Proffy Agilizei Bootcamp
 
 ## Iniciando o projeto
